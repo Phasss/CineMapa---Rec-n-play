@@ -2,8 +2,8 @@
   "use strict";
 
   const ISLAND_COLORS = {
-    "recife-antigo": "#d98c4a",
-    "santo-antonio": "#4aa3d9"
+    "recife-antigo": "#f7941d",
+    "santo-antonio": "#00a99d"
   };
 
   const MOBILE_BREAKPOINT = 900;
@@ -78,10 +78,10 @@
 
   function buildPinIcon(group) {
     const island = group.locs[0].island;
-    const color = ISLAND_COLORS[island] || "#c9a24b";
+    const color = ISLAND_COLORS[island] || "#ec1e79";
     const count = group.locs.length;
     const mixed = group.locs.some((l) => l.island !== island);
-    const fill = mixed ? "#c9a24b" : color;
+    const fill = mixed ? "#ec1e79" : color;
 
     const badge =
       count > 1

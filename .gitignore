@@ -1,2 +1,8 @@
 .DS_Store
 Thumbs.db
+
+# Arquivos de origem das logos (não usados diretamente pelo site; ver assets/)
+*.mov
+*.mp4
+/Imagem colada.png
+/RECIFE_E_PRA_FICAR_LOGO_COR-05.png

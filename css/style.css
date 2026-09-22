@@ -1,18 +1,28 @@
 :root {
-  --color-bg: #0f1416;
-  --color-bg-alt: #161d20;
-  --color-surface: #1c2427;
-  --color-surface-hover: #232c30;
-  --color-border: #2b3438;
-  --color-text: #eef2f0;
-  --color-text-muted: #9fb0ab;
-  --color-accent: #c9a24b;
-  --color-accent-hover: #ddb865;
-  --color-recife-antigo: #d98c4a;
-  --color-santo-antonio: #4aa3d9;
-  --shadow-panel: 0 20px 60px rgba(0, 0, 0, 0.45);
-  --radius: 10px;
-  --font-display: "Playfair Display", Georgia, serif;
+  --color-bg: #f4f6fb;
+  --color-bg-alt: #eaeef8;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f4fb;
+  --color-border: #dde3f0;
+  --color-text: #16204a;
+  --color-text-muted: #626d90;
+
+  --color-navy: #122a5c;
+  --color-navy-dark: #0c1e46;
+
+  --color-accent: #ec1e79;
+  --color-accent-hover: #c9126a;
+  --color-teal: #00a99d;
+  --color-teal-hover: #008d83;
+  --color-orange: #f7941d;
+  --color-yellow: #ffc72c;
+
+  --color-recife-antigo: #f7941d;
+  --color-santo-antonio: #00a99d;
+
+  --shadow-panel: 0 20px 50px rgba(12, 30, 70, 0.25);
+  --radius: 14px;
+  --font-display: "Baloo 2", "Inter", sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -56,8 +66,8 @@ body.menu-open {
 
 /* Header */
 .site-header {
-  background: linear-gradient(180deg, #14191b 0%, #0f1416 100%);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  border-bottom: 3px solid var(--color-accent);
   padding: 14px clamp(14px, 4vw, 24px);
   padding-top: calc(14px + var(--safe-top));
   flex-shrink: 0;
@@ -80,23 +90,42 @@ body.menu-open {
   min-width: 0;
 }
 
-.brand-icon {
-  font-size: 1.8rem;
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px 10px;
   flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+
+.logo-observatorio {
+  height: 34px;
+  padding-left: 8px;
+  border-left: 1px solid var(--color-border);
 }
 
 .brand h1 {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(1.15rem, 4vw, 1.5rem);
   margin: 0;
   letter-spacing: 0.01em;
   line-height: 1.2;
+  color: #ffffff;
 }
 
 .subtitle {
   margin: 2px 0 0;
   font-size: 0.82rem;
-  color: var(--color-text-muted);
+  color: #aab6da;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -108,23 +137,23 @@ body.menu-open {
   display: none;
   align-items: center;
   gap: 8px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  color: #ffffff;
   padding: 9px 14px;
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   flex-shrink: 0;
   min-height: 40px;
-  transition: border-color 0.15s ease;
+  transition: background 0.15s ease;
 }
 
 .hamburger-btn:hover,
 .hamburger-btn:focus-visible {
-  border-color: var(--color-accent);
+  background: var(--color-accent-hover);
 }
 
 .hamburger-icon {
@@ -139,12 +168,12 @@ body.menu-open {
   display: block;
   height: 2px;
   border-radius: 2px;
-  background: var(--color-accent);
+  background: #ffffff;
 }
 
 /* Toolbar */
 .toolbar {
-  background: var(--color-bg-alt);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
   position: sticky;
@@ -170,9 +199,9 @@ body.menu-open {
 .search-box input {
   width: 100%;
   padding: 11px 14px;
-  background: var(--color-surface);
+  background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 999px;
   color: var(--color-text);
   font-size: 0.95rem;
   font-family: var(--font-body);
@@ -204,14 +233,14 @@ body.menu-open {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--color-surface);
+  background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
   padding: 10px 16px;
   border-radius: 999px;
   font-size: 0.86rem;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
@@ -226,7 +255,7 @@ body.menu-open {
 .filter-btn.is-active {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: #1a1305;
+  color: #ffffff;
 }
 
 .dot {
@@ -246,7 +275,7 @@ body.menu-open {
 }
 
 .filter-btn.is-active .dot {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
 }
 
 .result-count {
@@ -278,7 +307,7 @@ main {
   width: 340px;
   flex-shrink: 0;
   border-right: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -292,18 +321,21 @@ main {
   padding: 16px;
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
+  background: var(--color-navy);
 }
 
 .sidebar-header h2 {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1.1rem;
   margin: 0;
+  color: #ffffff;
 }
 
 .sidebar-close {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.12);
   border: none;
-  color: var(--color-text-muted);
+  color: #ffffff;
   font-size: 1.4rem;
   line-height: 1;
   width: 34px;
@@ -317,7 +349,7 @@ main {
 }
 
 .sidebar-close:hover {
-  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .location-list {
@@ -332,20 +364,22 @@ main {
 .location-card {
   padding: 14px;
   border-radius: var(--radius);
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  background: var(--color-surface);
 }
 
 .location-card:hover,
 .location-card:focus-visible {
   background: var(--color-surface-hover);
+  border-color: var(--color-accent);
   outline: none;
 }
 
 .location-card.is-active {
-  background: var(--color-surface);
+  background: #fdeaf3;
   border-color: var(--color-accent);
 }
 
@@ -358,9 +392,11 @@ main {
 
 .location-card h3 {
   font-family: var(--font-display);
+  font-weight: 700;
   font-size: 1rem;
   margin: 0;
   line-height: 1.3;
+  color: var(--color-text);
 }
 
 .location-year {
@@ -380,10 +416,10 @@ main {
   align-items: center;
   gap: 6px;
   font-size: 0.74rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 3px 9px;
   border-radius: 999px;
-  background: var(--color-surface);
+  background: var(--color-bg-alt);
 }
 
 .island-tag--recife-antigo {
@@ -410,7 +446,7 @@ main {
 #map {
   position: absolute;
   inset: 0;
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
 }
 
 /* Custom pin markers */
@@ -429,7 +465,7 @@ main {
 .pin {
   position: relative;
   display: inline-block;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 6px rgba(12, 30, 70, 0.35));
 }
 
 .pin svg {
@@ -440,8 +476,8 @@ main {
   position: absolute;
   top: -4px;
   right: -6px;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: #ffffff;
+  color: var(--color-navy);
   border: 2px solid var(--color-accent);
   border-radius: 999px;
   font-size: 0.65rem;
@@ -469,7 +505,8 @@ main {
 .leaflet-popup-content-wrapper {
   background: var(--color-surface);
   color: var(--color-text);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-panel);
 }
 
 .leaflet-popup-content {
@@ -484,6 +521,7 @@ main {
   font-family: var(--font-display);
   font-weight: 700;
   margin: 0 0 2px;
+  color: var(--color-navy);
 }
 
 .popup-meta {
@@ -495,7 +533,7 @@ main {
 .popup-link {
   color: var(--color-accent);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
@@ -519,7 +557,7 @@ main {
 .detail-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(6, 8, 9, 0.6);
+  background: rgba(12, 30, 70, 0.45);
   backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
@@ -536,7 +574,7 @@ main {
   position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
+  border-radius: 18px;
   box-shadow: var(--shadow-panel);
   max-width: 520px;
   width: 100%;
@@ -571,6 +609,7 @@ main {
 
 .detail-close:hover {
   color: var(--color-text);
+  background: var(--color-border);
 }
 
 .detail-badge {
@@ -587,10 +626,12 @@ main {
 
 #detailTitle {
   font-family: var(--font-display);
+  font-weight: 700;
   margin: 0 0 6px;
   font-size: 1.4rem;
   padding-right: 30px;
   line-height: 1.3;
+  color: var(--color-navy);
 }
 
 .detail-meta {
@@ -620,7 +661,7 @@ main {
   width: 100%;
   padding-top: 56.25%;
   margin-bottom: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
   background: #000;
 }
@@ -647,9 +688,9 @@ main {
   gap: 8px;
   width: 100%;
   padding: 13px 16px;
-  border-radius: 8px;
+  border-radius: 999px;
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
@@ -661,7 +702,7 @@ main {
 
 .btn-primary {
   background: var(--color-accent);
-  color: #1a1305;
+  color: #ffffff;
   margin-top: 14px;
 }
 
@@ -670,20 +711,34 @@ main {
 }
 
 .btn-secondary {
-  background: var(--color-bg-alt);
-  border-color: var(--color-border);
-  color: var(--color-text);
+  background: #ffffff;
+  border-color: var(--color-teal);
+  color: var(--color-teal-hover);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent-hover);
+  background: var(--color-teal);
+  color: #ffffff;
 }
 
 /* Responsive: tablet and phone */
 @media (max-width: 900px) {
   .hamburger-btn {
     display: inline-flex;
+  }
+
+  .brand-logos {
+    padding: 5px 8px;
+    gap: 6px;
+  }
+
+  .logo {
+    height: 24px;
+  }
+
+  .logo-observatorio {
+    height: 28px;
+    padding-left: 6px;
   }
 
   main {
@@ -716,7 +771,7 @@ main {
     transform: translateX(-100%);
     transition: transform 0.25s ease;
     z-index: 500;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 40px rgba(12, 30, 70, 0.35);
   }
 
   .map-layout.show-list-mobile .sidebar {
@@ -732,7 +787,7 @@ main {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(6, 8, 9, 0.55);
+    background: rgba(12, 30, 70, 0.45);
     z-index: 400;
     opacity: 0;
     pointer-events: none;
@@ -780,7 +835,7 @@ main {
   .detail-panel {
     max-width: 100%;
     max-height: 86svh;
-    border-radius: 18px 18px 0 0;
+    border-radius: 22px 22px 0 0;
     padding: 22px 20px calc(24px + var(--safe-bottom));
     animation: sheet-in 0.24s ease;
   }
