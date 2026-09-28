@@ -34,12 +34,16 @@ const LOCATIONS = [
     lat: -8.0634,
     lng: -34.8710,
     videoUrl: "",
+    synopsis: "Benjamin Abrahão é um fotógrafo que se aventura pelo sertão para registrar Lampião e seu bando. A obra mistura ficção e história para reconstruir o universo do cangaço.",
+    releaseDate: "26 de julho de 1997",
+    director: "Paulo Caldas, Lírio Ferreira",
+    screenwriter: "Paulo Caldas, Lírio Ferreira, Hilton Lacerda",
     notes: "Endereço exato da cena não informado — marcador posicionado no Marco Zero, ponto de referência do Bairro do Recife."
   },
   {
     id: "agente-secreto",
-    title: "Agente Secreto",
-    year: 2022,
+    title: "O Agente Secreto",
+    year: 2025,
     island: "recife-antigo",
     islandLabel: "Ilha do Recife Antigo",
     placeName: "Bairro do Recife (Marco Zero)",
@@ -47,6 +51,10 @@ const LOCATIONS = [
     lat: -8.0634,
     lng: -34.8710,
     videoUrl: "",
+    synopsis: "Em 1977, Marcelo retorna ao Recife em meio à ditadura militar e se vê envolvido em uma trama de perseguições e memórias. A cidade ocupa um papel central na construção da narrativa.",
+    releaseDate: "6 de novembro de 2025",
+    director: "Kleber Mendonça Filho",
+    screenwriter: "Kleber Mendonça Filho",
     notes: "Endereço exato da cena não informado — marcador posicionado no Marco Zero, ponto de referência do Bairro do Recife."
   },
   {
@@ -60,6 +68,10 @@ const LOCATIONS = [
     lat: -8.0646,
     lng: -34.8731,
     videoUrl: "",
+    synopsis: "Zizo é um poeta anarquista que circula pelas ruas do Recife entre poesia, desejo e transgressão. Sua relação com Eneida movimenta uma história marcada pela liberdade e pelo confronto com as convenções.",
+    releaseDate: "15 de junho de 2012",
+    director: "Cláudio Assis",
+    screenwriter: "Hilton Lacerda",
     notes: "Rua histórica de galerias de arte e boemia no Bairro do Recife."
   },
   {
@@ -73,11 +85,15 @@ const LOCATIONS = [
     lat: -8.0639,
     lng: -34.8753,
     videoUrl: "",
+    synopsis: "Uma jovem se vê envolvida em uma trama de segredos, disputas familiares e conflitos amorosos. A obra também preserva importantes imagens do Recife durante o Ciclo do Recife.",
+    releaseDate: "1926",
+    director: "Jota Soares",
+    screenwriter: "Jota Soares",
     notes: "Um dos primeiros filmes de ficção pernambucanos. A ponte liga o Bairro do Recife a Santo Antônio."
   },
   {
-    id: "paraiba-mulher-macho",
-    title: "Paraíba Mulher Macho",
+    id: "parahyba-mulher-macho",
+    title: "Parahyba Mulher Macho",
     year: 1983,
     island: "santo-antonio",
     islandLabel: "Ilha de Santo Antônio",
@@ -86,6 +102,10 @@ const LOCATIONS = [
     lat: -8.0609,
     lng: -34.8780,
     videoUrl: "",
+    synopsis: "Anayde Beiriz é uma jovem professora que não se conforma com as ideias e costumes da sociedade de sua época. Ao se apaixonar por João Dantas, ela acaba se tornando pivô do estopim da Revolução de 1930.",
+    releaseDate: "1983",
+    director: "Tizuka Yamasaki",
+    screenwriter: "Tizuka Yamasaki, José Louzeiro",
     notes: "Praça histórica cercada por prédios públicos, em frente ao Palácio do Campo das Princesas."
   },
   {
@@ -99,6 +119,10 @@ const LOCATIONS = [
     lat: -8.0600,
     lng: -34.8774,
     videoUrl: "",
+    synopsis: "A Revolução Pernambucana de 1817 ganha as telas em uma narrativa que recupera seus personagens, conflitos e acontecimentos. O filme resgata um dos episódios marcantes da história política de Pernambuco.",
+    releaseDate: "2017",
+    director: "Tizuka Yamasaki",
+    screenwriter: "Tizuka Yamasaki",
     notes: "Sede do governo de Pernambuco desde 1841, na Praça da República."
   },
   {
@@ -112,6 +136,10 @@ const LOCATIONS = [
     lat: -8.0629,
     lng: -34.8770,
     videoUrl: "",
+    synopsis: "Entre ruas e deslocamentos pelo Recife, uma personagem atravessa diferentes situações enquanto constrói sua relação com a cidade. A paisagem urbana participa diretamente da narrativa.",
+    releaseDate: "2019",
+    director: "Sérgio Oliveira",
+    screenwriter: "Sérgio Oliveira",
     notes: ""
   },
   {
@@ -125,6 +153,10 @@ const LOCATIONS = [
     lat: -8.0670,
     lng: -34.8790,
     videoUrl: "",
+    synopsis: "A relação entre Luiz Gonzaga e Gonzaguinha é o centro da história, marcada por música, conflitos e diferentes formas de enxergar a vida. A narrativa atravessa momentos importantes da trajetória dos dois.",
+    releaseDate: "26 de outubro de 2012",
+    director: "Breno Silveira",
+    screenwriter: "Patricia Andrade, Breno Silveira",
     notes: "Entorno da Igreja de São Pedro dos Clérigos, com o Teatro Hermilo Borba Filho."
   },
   {
@@ -138,6 +170,10 @@ const LOCATIONS = [
     lat: -8.0670,
     lng: -34.8790,
     videoUrl: "",
+    synopsis: "Durante a ditadura militar, um jovem soldado se envolve com Clécio, artista e líder de um grupo teatral. Entre os dois nasce uma relação que atravessa desejo, arte e liberdade.",
+    releaseDate: "15 de agosto de 2013",
+    director: "Hilton Lacerda",
+    screenwriter: "Hilton Lacerda",
     notes: "Cena rodada no Teatro Hermilo Borba Filho, no Pátio de São Pedro."
   }
 ];

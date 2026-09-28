@@ -6,3 +6,7 @@ Thumbs.db
 *.mp4
 /Imagem colada.png
 /RECIFE_E_PRA_FICAR_LOGO_COR-05.png
+
+# Protótipo React/Lovable usado só como referência de design (o site publicado
+# continua em HTML/CSS/JS puro, sem build, para funcionar bem no GitHub Pages)
+/pixel-perfect-pixel-main/

@@ -12,7 +12,7 @@
     islandFilter: "all",
     searchTerm: "",
     activeId: null,
-    menuOpen: false
+    mobileTab: "mapa"
   };
 
   /** @type {Map<string, {lat:number, lng:number, locs:object[], marker:L.Marker}>} */
@@ -40,7 +40,7 @@
     renderList();
     setupToolbar();
     setupDetailPanel();
-    setupMobileMenu();
+    setupTabSwitcher();
   }
 
   function groupKey(loc) {
@@ -159,36 +159,25 @@
     });
   }
 
-  function setupMobileMenu() {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const closeBtn = document.getElementById("sidebarClose");
-    const backdrop = document.getElementById("sidebarBackdrop");
-    if (!hamburgerBtn) return;
+  function setupTabSwitcher() {
+    const switcher = document.getElementById("tabSwitcher");
+    if (!switcher) return;
 
-    hamburgerBtn.addEventListener("click", openMobileMenu);
-    closeBtn.addEventListener("click", closeMobileMenu);
-    backdrop.addEventListener("click", closeMobileMenu);
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMobileMenu();
+    switcher.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > MOBILE_BREAKPOINT) closeMobileMenu();
+    document.getElementById("sidebarClose").addEventListener("click", () => switchTab("mapa"));
+  }
+
+  function switchTab(tab) {
+    state.mobileTab = tab;
+    document.querySelector(".map-layout").classList.toggle("tab-lista", tab === "lista");
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      const active = btn.dataset.tab === tab;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
-  }
-
-  function openMobileMenu() {
-    state.menuOpen = true;
-    document.querySelector(".map-layout").classList.add("show-list-mobile");
-    document.getElementById("hamburgerBtn").setAttribute("aria-expanded", "true");
-    document.body.classList.add("menu-open");
-  }
-
-  function closeMobileMenu() {
-    state.menuOpen = false;
-    document.querySelector(".map-layout").classList.remove("show-list-mobile");
-    document.getElementById("hamburgerBtn").setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
   }
 
   function getFilteredLocations() {
@@ -253,7 +242,7 @@
     setActiveCard(id);
 
     const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
-    if (isMobile && state.menuOpen) closeMobileMenu();
+    if (isMobile) switchTab("mapa");
 
     map.flyTo([loc.lat, loc.lng], 17, { duration: 0.6 });
     setTimeout(() => openDetail(id), isMobile ? 300 : 0);
@@ -272,11 +261,24 @@
 
     setActiveCard(id);
 
-    document.getElementById("detailIsland").textContent = loc.islandLabel;
-    document.getElementById("detailIsland").style.color = ISLAND_COLORS[loc.island];
-    document.getElementById("detailTitle").textContent = `${loc.title} (${loc.year})`;
+    document.getElementById("detailIsland").textContent = `Locação · ${loc.year}`;
+    document.getElementById("detailTitle").textContent = loc.title;
     document.getElementById("detailMeta").textContent = loc.placeName;
-    document.getElementById("detailAddress").textContent = loc.address;
+
+    const islandTag = document.getElementById("detailIslandTag");
+    islandTag.className = `island-tag island-tag--${loc.island}`;
+    document.getElementById("detailIslandDot").className = `dot dot--${loc.island}`;
+    document.getElementById("detailIslandLabel").textContent = loc.islandLabel;
+
+    const synopsisEl = document.getElementById("detailSynopsis");
+    synopsisEl.textContent = loc.synopsis || "";
+    synopsisEl.hidden = !loc.synopsis;
+
+    setCreditRow("detailDirectorRow", "detailDirector", loc.director);
+    setCreditRow("detailScreenwriterRow", "detailScreenwriter", loc.screenwriter);
+    setCreditRow("detailReleaseRow", "detailRelease", loc.releaseDate);
+    document.getElementById("detailCredits").hidden =
+      !loc.releaseDate && !loc.director && !loc.screenwriter;
 
     const notesEl = document.getElementById("detailNotes");
     notesEl.textContent = loc.notes || "";
@@ -310,6 +312,12 @@
 
     document.getElementById("detailOverlay").hidden = false;
     document.body.classList.add("detail-open");
+  }
+
+  function setCreditRow(rowId, valueId, value) {
+    const row = document.getElementById(rowId);
+    document.getElementById(valueId).textContent = value || "";
+    row.hidden = !value;
   }
 
   function closeDetail() {

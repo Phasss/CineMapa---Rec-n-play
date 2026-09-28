@@ -20,20 +20,14 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand">
-        <div class="brand-logos">
-          <img class="logo logo-recife" src="assets/logo-recife-e-pra-ficar.png" alt="Recife é pra ficar" />
-          <img class="logo logo-observatorio" src="assets/logo-observatorio-turismo.png" alt="Observatório de Turismo do Recife" />
-        </div>
-        <div>
-          <h1>Cinemapa do Recife Antigo</h1>
-          <p class="subtitle">Locações de cinema nas ilhas do Recife Antigo e de Santo Antônio</p>
-        </div>
+      <div class="brand-logos">
+        <img class="logo-recife" src="assets/logo-recife-e-pra-ficar.png" alt="Recife é pra ficar — Secretaria de Turismo e Lazer" />
+        <img class="logo-observatorio" src="assets/logo-observatorio-turismo.png" alt="Observatório de Turismo do Recife" />
       </div>
-      <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Ver lista de locações" aria-expanded="false" aria-controls="sidebar">
-        <span class="hamburger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        Locais
-      </button>
+      <div class="brand-text">
+        <h1>Cinemapa do Recife Antigo</h1>
+        <p class="subtitle">Locações de cinema no Recife Antigo e em Santo Antônio</p>
+      </div>
     </div>
   </header>
 
@@ -63,15 +57,24 @@
       <aside class="sidebar" id="sidebar" aria-label="Lista de locações">
         <div class="sidebar-header">
           <h2>Locais no mapa</h2>
-          <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Fechar lista">&times;</button>
+          <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Voltar ao mapa">&times;</button>
         </div>
         <ul class="location-list" id="locationList"></ul>
       </aside>
 
-      <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
-
       <div class="map-wrap">
         <div id="map"></div>
+      </div>
+
+      <div class="tab-switcher" id="tabSwitcher">
+        <button type="button" class="tab-btn is-active" data-tab="mapa" aria-pressed="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+          Mapa
+        </button>
+        <button type="button" class="tab-btn" data-tab="lista" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Lista
+        </button>
       </div>
     </section>
   </main>
@@ -79,22 +82,58 @@
   <!-- Painel de detalhes (abre ao clicar num marcador ou item da lista) -->
   <div class="detail-overlay" id="detailOverlay" hidden>
     <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-      <button class="detail-close" id="detailClose" aria-label="Fechar">&times;</button>
-      <span class="detail-badge" id="detailIsland"></span>
-      <h2 id="detailTitle"></h2>
-      <p class="detail-meta" id="detailMeta"></p>
-      <p class="detail-address" id="detailAddress"></p>
-      <p class="detail-notes" id="detailNotes"></p>
-
-      <div class="detail-video" id="detailVideoWrap">
-        <div class="video-embed" id="detailVideoEmbed" hidden></div>
-        <a class="btn btn-secondary" id="detailVideoLink" href="#" target="_blank" rel="noopener">▶ Assistir trecho da cena</a>
-        <p class="video-empty" id="detailVideoEmpty" hidden>Trecho de vídeo ainda não cadastrado para este local.</p>
+      <div class="detail-header">
+        <div class="detail-header-text">
+          <span class="detail-badge" id="detailIsland"></span>
+          <h2 id="detailTitle"></h2>
+          <p class="detail-meta" id="detailMeta"></p>
+        </div>
+        <button class="detail-close" id="detailClose" aria-label="Fechar">&times;</button>
       </div>
 
-      <a class="btn btn-primary" id="detailDirections" href="#" target="_blank" rel="noopener">
-        🚶 Como chegar a pé (Google Maps)
-      </a>
+      <div class="detail-body">
+        <span class="island-tag" id="detailIslandTag">
+          <span class="dot" id="detailIslandDot"></span>
+          <span id="detailIslandLabel"></span>
+        </span>
+
+        <p class="detail-synopsis" id="detailSynopsis"></p>
+
+        <div class="detail-video" id="detailVideoWrap">
+          <a class="video-row" id="detailVideoLink" href="#" target="_blank" rel="noopener">
+            <span class="video-row-icon" aria-hidden="true">▶</span>
+            <span class="video-row-text">
+              <span class="video-row-title">Assistir trecho</span>
+              <span class="video-row-sub">Abre o vídeo do filme em nova aba</span>
+            </span>
+          </a>
+          <div class="video-embed" id="detailVideoEmbed" hidden></div>
+          <p class="video-empty" id="detailVideoEmpty" hidden>Trecho de vídeo ainda não cadastrado para este local.</p>
+        </div>
+
+        <dl class="detail-credits" id="detailCredits">
+          <div class="credit-row" id="detailDirectorRow">
+            <dt>Direção</dt>
+            <dd id="detailDirector"></dd>
+          </div>
+          <div class="credit-row" id="detailScreenwriterRow">
+            <dt>Roteiro</dt>
+            <dd id="detailScreenwriter"></dd>
+          </div>
+          <div class="credit-row" id="detailReleaseRow">
+            <dt>Lançamento</dt>
+            <dd id="detailRelease"></dd>
+          </div>
+        </dl>
+
+        <p class="detail-notes" id="detailNotes"></p>
+      </div>
+
+      <div class="detail-footer">
+        <a class="btn btn-primary" id="detailDirections" href="#" target="_blank" rel="noopener">
+          🚶 Traçar rota a pé
+        </a>
+      </div>
     </div>
   </div>
 
