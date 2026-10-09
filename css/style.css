@@ -10,15 +10,15 @@
   --color-navy: #122a5c;
   --color-navy-dark: #0c1e46;
 
+  --color-header: #1e4bd8;
+  --color-header-dark: #1839a8;
+
   --color-accent: #ec1e79;
   --color-accent-hover: #c9126a;
-  --color-teal: #00a99d;
-  --color-teal-hover: #008d83;
-  --color-orange: #f7941d;
-  --color-yellow: #ffc72c;
+  --color-yellow: #fae54e;
 
-  --color-recife-antigo: #f7941d;
-  --color-santo-antonio: #00a99d;
+  --color-cta: #ff00a5;
+  --color-cta-hover: #d4008a;
 
   --shadow-panel: 0 20px 50px rgba(12, 30, 70, 0.25);
   --radius: 14px;
@@ -65,77 +65,62 @@ body.detail-open {
 
 /* Header */
 .site-header {
-  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
-  border-bottom: 3px solid var(--color-accent);
-  padding: 14px clamp(14px, 4vw, 24px);
-  padding-top: calc(14px + var(--safe-top));
+  position: relative;
+  background: var(--color-header);
+  border-bottom: 3px solid var(--color-cta);
+  padding: 10px clamp(14px, 4vw, 24px);
+  padding-top: calc(10px + var(--safe-top));
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .header-inner {
+  position: relative;
+  z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas: "logos title";
-  align-items: center;
-  gap: 8px 16px;
-}
-
-.brand-logos {
-  grid-area: logos;
   display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.logo-recife {
-  display: block;
-  height: 52px;
+.header-accent {
+  position: absolute;
+  z-index: 0;
+  top: -190px;
+  left: -110px;
+  height: 280px;
   width: auto;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 6px 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  opacity: 0.95;
+  pointer-events: none;
 }
 
-.logo-observatorio {
-  display: block;
-  height: 26px;
-  width: auto;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 4px 7px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-}
-
-.brand-text {
-  grid-area: title;
-  min-width: 0;
-}
-
-.brand-text h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(0.95rem, 2.6vw, 1.2rem);
+.brand-logo {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  letter-spacing: 0.01em;
-  line-height: 1.25;
-  color: #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-left: 30px;
+  flex-shrink: 0;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
 }
 
-.subtitle {
-  margin: 2px 0 0;
-  font-size: 0.78rem;
-  color: #aab6da;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.brand-logo-main {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 58px;
+  width: auto;
+}
+
+.brand-marcas {
+  display: block;
+  height: 56px;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
 }
 
 /* Toolbar */
@@ -183,68 +168,6 @@ body.detail-open {
   color: var(--color-text-muted);
 }
 
-.filters {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.filters::-webkit-scrollbar {
-  display: none;
-}
-
-.filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 0.86rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-  min-height: 40px;
-}
-
-.filter-btn:hover {
-  color: var(--color-text);
-  border-color: var(--color-accent);
-}
-
-.filter-btn.is-active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #ffffff;
-}
-
-.dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.dot--recife-antigo {
-  background: var(--color-recife-antigo);
-}
-
-.dot--santo-antonio {
-  background: var(--color-santo-antonio);
-}
-
-.filter-btn.is-active .dot {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
-}
-
 .result-count {
   margin-left: auto;
   font-size: 0.8rem;
@@ -288,7 +211,7 @@ main {
   padding: 16px;
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
-  background: var(--color-navy);
+  background: var(--color-header);
 }
 
 .sidebar-header h2 {
@@ -342,15 +265,15 @@ main {
 .location-card:hover,
 .location-card:focus-visible {
   background: var(--color-surface-hover);
-  border-color: var(--color-accent);
+  border-color: var(--color-header);
   box-shadow: 0 4px 14px rgba(18, 42, 92, 0.12);
   transform: translateY(-1px);
   outline: none;
 }
 
 .location-card.is-active {
-  background: #fdeaf3;
-  border-color: var(--color-accent);
+  background: #e8edfc;
+  border-color: var(--color-header);
 }
 
 .location-card-top {
@@ -379,25 +302,6 @@ main {
   margin: 4px 0 8px;
   font-size: 0.83rem;
   color: var(--color-text-muted);
-}
-
-.island-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: var(--color-bg-alt);
-}
-
-.island-tag--recife-antigo {
-  color: var(--color-recife-antigo);
-}
-
-.island-tag--santo-antonio {
-  color: var(--color-santo-antonio);
 }
 
 .empty-state {
@@ -440,8 +344,8 @@ main {
 }
 
 .tab-btn.is-active {
-  background: var(--color-accent);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--color-header);
 }
 
 #map {
@@ -592,23 +496,41 @@ main {
 }
 
 .detail-header {
+  position: relative;
   flex-shrink: 0;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-dark) 100%);
+  background: var(--color-header);
   padding: 20px 20px 16px;
   border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+.detail-header-accent {
+  position: absolute;
+  top: -26px;
+  right: -28px;
+  width: 120px;
+  height: auto;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 2px 3px rgba(12, 20, 46, 0.25));
 }
 
 .detail-header-text {
+  position: relative;
+  z-index: 1;
   flex: 1;
   min-width: 0;
 }
 
 .detail-close {
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
   border: none;
   color: #ffffff;
   font-size: 1.4rem;
@@ -623,7 +545,7 @@ main {
 }
 
 .detail-close:hover {
-  background: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .detail-badge {
@@ -647,7 +569,7 @@ main {
 
 .detail-meta {
   margin: 3px 0 0;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.88rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -659,10 +581,6 @@ main {
   min-height: 0;
   overflow-y: auto;
   padding: 18px 20px 4px;
-}
-
-.detail-body .island-tag {
-  margin-bottom: 4px;
 }
 
 .detail-synopsis {
@@ -829,28 +747,51 @@ main {
 }
 
 .btn-primary {
-  background: var(--color-navy);
+  position: relative;
+  overflow: visible;
+  background: var(--color-cta);
   color: #ffffff;
+  padding-left: 58px;
 }
 
 .btn-primary:hover {
-  background: var(--color-navy-dark);
+  background: var(--color-cta-hover);
 }
 
 .btn[hidden] {
   display: none;
 }
 
+.btn-primary .btn-icon {
+  position: absolute;
+  left: 12px;
+  top: -18px;
+  height: 56px;
+  width: auto;
+  display: block;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
 /* Responsive: tablet and phone */
 @media (max-width: 900px) {
-  .logo-recife {
-    height: 40px;
-    padding: 5px 8px;
+  .brand-logo {
+    margin-left: 22px;
   }
 
-  .logo-observatorio {
-    height: 22px;
-    padding: 3px 6px;
+  .brand-logo-main {
+    height: 48px;
+  }
+
+  .header-accent {
+    height: 220px;
+    top: -150px;
+    left: -85px;
+  }
+
+  .brand-marcas {
+    height: 46px;
   }
 
   main {
@@ -911,7 +852,7 @@ main {
     bottom: calc(16px + var(--safe-bottom));
     transform: translateX(-50%);
     z-index: 550;
-    background: var(--color-navy);
+    background: var(--color-header);
     border-radius: 999px;
     padding: 4px;
     gap: 4px;
@@ -924,16 +865,22 @@ main {
 }
 
 @media (max-width: 480px) {
-  .brand-text h1 {
-    white-space: normal;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .brand-logo {
+    margin-left: 16px;
   }
 
-  .subtitle {
-    display: none;
+  .brand-logo-main {
+    height: 42px;
+  }
+
+  .header-accent {
+    height: 190px;
+    top: -128px;
+    left: -72px;
+  }
+
+  .brand-marcas {
+    height: 38px;
   }
 }
 
@@ -948,11 +895,6 @@ main {
 
   .result-count {
     margin-left: 0;
-    order: 1;
-  }
-
-  .filters {
-    flex: 1;
   }
 
   /* Bottom-sheet style detail panel on phones */
@@ -984,6 +926,7 @@ main {
     height: 4px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.35);
+    z-index: 1;
   }
 
   .detail-footer {
@@ -998,10 +941,6 @@ main {
 
 /* Larger touch targets on any touch device */
 @media (hover: none) and (pointer: coarse) {
-  .filter-btn {
-    padding: 11px 16px;
-  }
-
   .location-card {
     padding: 16px 14px;
   }

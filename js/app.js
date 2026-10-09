@@ -1,15 +1,10 @@
 (function () {
   "use strict";
 
-  const ISLAND_COLORS = {
-    "recife-antigo": "#f7941d",
-    "santo-antonio": "#00a99d"
-  };
-
+  const PIN_COLOR = "#ec1e79";
   const MOBILE_BREAKPOINT = 900;
 
   const state = {
-    islandFilter: "all",
     searchTerm: "",
     activeId: null,
     mobileTab: "mapa"
@@ -26,7 +21,7 @@
       scrollWheelZoom: true,
       tap: true,
       zoomControl: false
-    }).setView([-8.0631, -34.8745], 15);
+    }).setView([-8.09, -34.905], 12);
 
     L.control.zoom({ position: "bottomright" }).addTo(map);
 
@@ -37,6 +32,7 @@
     }).addTo(map);
 
     buildGroups();
+    fitToAllGroups();
     renderList();
     setupToolbar();
     setupDetailPanel();
@@ -76,12 +72,20 @@
     });
   }
 
+  function fitToAllGroups() {
+    const points = Array.from(groups.values()).map((g) => [g.lat, g.lng]);
+    if (points.length === 0) return;
+    const bounds = L.latLngBounds(points);
+    map.invalidateSize();
+    map.fitBounds(bounds, { padding: [40, 40] });
+    setTimeout(() => {
+      map.invalidateSize();
+      map.fitBounds(bounds, { padding: [40, 40] });
+    }, 150);
+  }
+
   function buildPinIcon(group) {
-    const island = group.locs[0].island;
-    const color = ISLAND_COLORS[island] || "#ec1e79";
     const count = group.locs.length;
-    const mixed = group.locs.some((l) => l.island !== island);
-    const fill = mixed ? "#ec1e79" : color;
 
     const badge =
       count > 1
@@ -89,7 +93,7 @@
         : "";
 
     const html = `
-      <span class="pin" style="--pin-color:${fill}">
+      <span class="pin" style="--pin-color:${PIN_COLOR}">
         <svg viewBox="0 0 32 40" width="34" height="42">
           <path d="M16 0C7.2 0 0 7.2 0 16c0 11 16 24 16 24s16-13 16-24C32 7.2 24.8 0 16 0z" fill="var(--pin-color)"/>
           <circle cx="16" cy="16" r="7" fill="#12181a"/>
@@ -112,7 +116,7 @@
       const loc = group.locs[0];
       return `
         <p class="popup-title">${escapeHtml(loc.title)} (${loc.year})</p>
-        <p class="popup-meta">${escapeHtml(loc.placeName)} &middot; ${escapeHtml(loc.islandLabel)}</p>
+        <p class="popup-meta">${escapeHtml(loc.placeName)}</p>
         <span class="popup-link" data-open-detail="${loc.id}">Ver detalhes e trecho &rarr;</span>
       `;
     }
@@ -134,15 +138,6 @@
   }
 
   function setupToolbar() {
-    document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        state.islandFilter = btn.dataset.island;
-        renderList();
-      });
-    });
-
     document.getElementById("search").addEventListener("input", (e) => {
       state.searchTerm = e.target.value.trim().toLowerCase();
       renderList();
@@ -182,10 +177,8 @@
 
   function getFilteredLocations() {
     return LOCATIONS.filter((loc) => {
-      const matchesIsland = state.islandFilter === "all" || loc.island === state.islandFilter;
       const haystack = `${loc.title} ${loc.placeName} ${loc.address}`.toLowerCase();
-      const matchesSearch = !state.searchTerm || haystack.includes(state.searchTerm);
-      return matchesIsland && matchesSearch;
+      return !state.searchTerm || haystack.includes(state.searchTerm);
     });
   }
 
@@ -204,7 +197,7 @@
     });
 
     if (filtered.length === 0) {
-      list.innerHTML = `<li class="empty-state">Nenhuma locação encontrada com esses filtros.<br>Tente limpar a busca ou trocar o filtro de ilha.</li>`;
+      list.innerHTML = `<li class="empty-state">Nenhuma locação encontrada.<br>Tente buscar por outro filme ou local.</li>`;
       return;
     }
 
@@ -217,9 +210,6 @@
             <span class="location-year">${loc.year}</span>
           </div>
           <p class="location-place">${escapeHtml(loc.placeName)}</p>
-          <span class="island-tag island-tag--${loc.island}">
-            <span class="dot dot--${loc.island}"></span>${escapeHtml(loc.islandLabel)}
-          </span>
         </li>
       `
       )
@@ -264,11 +254,6 @@
     document.getElementById("detailIsland").textContent = `Locação · ${loc.year}`;
     document.getElementById("detailTitle").textContent = loc.title;
     document.getElementById("detailMeta").textContent = loc.placeName;
-
-    const islandTag = document.getElementById("detailIslandTag");
-    islandTag.className = `island-tag island-tag--${loc.island}`;
-    document.getElementById("detailIslandDot").className = `dot dot--${loc.island}`;
-    document.getElementById("detailIslandLabel").textContent = loc.islandLabel;
 
     const synopsisEl = document.getElementById("detailSynopsis");
     synopsisEl.textContent = loc.synopsis || "";

@@ -10,16 +10,13 @@
  * 4. Para o link do vídeo: cole a URL do YouTube (com &t=90s para começar
  *    num tempo específico) ou o link de compartilhamento do Google Drive.
  *
- * island aceita apenas dois valores: "recife-antigo" ou "santo-antonio".
- *
  * Dois locais com lat/lng EXATAMENTE iguais são agrupados automaticamente
  * em um único marcador no mapa (com um selo de contagem), em vez de ficarem
- * sobrepostos. Foi o caso proposital do Marco Zero e do Pátio de São Pedro
- * abaixo, onde não temos o endereço exato de cada cena.
+ * sobrepostos. É o caso proposital do Marco Zero, do Pátio de São Pedro e do
+ * Cinema São Luiz abaixo, onde dois filmes dividem a mesma referência.
  *
- * Coordenadas obtidas via OpenStreetMap/Nominatim (ago/2026) para os pontos
- * de referência informados. Ver README.md para as fontes e para o histórico
- * de revisão desta lista.
+ * Coordenadas obtidas via OpenStreetMap/Nominatim e fontes públicas
+ * (Wikipédia, sites oficiais). Ver README.md para o histórico de revisão.
  */
 
 const LOCATIONS = [
@@ -27,8 +24,6 @@ const LOCATIONS = [
     id: "baile-perfumado",
     title: "O Baile Perfumado",
     year: 1996,
-    island: "recife-antigo",
-    islandLabel: "Ilha do Recife Antigo",
     placeName: "Bairro do Recife (Marco Zero)",
     address: "Bairro do Recife (Recife Antigo), Recife - PE",
     lat: -8.0634,
@@ -44,8 +39,6 @@ const LOCATIONS = [
     id: "agente-secreto",
     title: "O Agente Secreto",
     year: 2025,
-    island: "recife-antigo",
-    islandLabel: "Ilha do Recife Antigo",
     placeName: "Bairro do Recife (Marco Zero)",
     address: "Bairro do Recife (Recife Antigo), Recife - PE",
     lat: -8.0634,
@@ -61,8 +54,6 @@ const LOCATIONS = [
     id: "febre-do-rato",
     title: "Febre do Rato",
     year: 2011,
-    island: "recife-antigo",
-    islandLabel: "Ilha do Recife Antigo",
     placeName: "Rua da Moeda",
     address: "Rua da Moeda, Bairro do Recife, Recife - PE",
     lat: -8.0646,
@@ -78,8 +69,6 @@ const LOCATIONS = [
     id: "filha-do-advogado",
     title: "A Filha do Advogado",
     year: 1926,
-    island: "recife-antigo",
-    islandLabel: "Ilha do Recife Antigo",
     placeName: "Ponte Maurício de Nassau",
     address: "Ponte Maurício de Nassau, Recife - PE",
     lat: -8.0639,
@@ -95,8 +84,6 @@ const LOCATIONS = [
     id: "parahyba-mulher-macho",
     title: "Parahyba Mulher Macho",
     year: 1983,
-    island: "santo-antonio",
-    islandLabel: "Ilha de Santo Antônio",
     placeName: "Praça da República",
     address: "Praça da República, Santo Antônio, Recife - PE",
     lat: -8.0609,
@@ -112,8 +99,6 @@ const LOCATIONS = [
     id: "1817-revolucao",
     title: "1817 - A Revolução Esquecida",
     year: 2017,
-    island: "santo-antonio",
-    islandLabel: "Ilha de Santo Antônio",
     placeName: "Palácio do Campo das Princesas",
     address: "Praça da República, s/n - Santo Antônio, Recife - PE",
     lat: -8.0600,
@@ -129,8 +114,6 @@ const LOCATIONS = [
     id: "prometo-que-um-dia",
     title: "Prometo que um dia deixo essa cidade",
     year: 2019,
-    island: "santo-antonio",
-    islandLabel: "Ilha de Santo Antônio",
     placeName: "Rua Imperador Dom Pedro II",
     address: "Rua Imperador Dom Pedro II, Santo Antônio, Recife - PE",
     lat: -8.0629,
@@ -146,8 +129,6 @@ const LOCATIONS = [
     id: "gonzaga-pai-filho",
     title: "Gonzaga: De Pai pra Filho",
     year: 2012,
-    island: "santo-antonio",
-    islandLabel: "Ilha de Santo Antônio",
     placeName: "Pátio de São Pedro",
     address: "Pátio de São Pedro, Santo Antônio, Recife - PE",
     lat: -8.0670,
@@ -163,8 +144,6 @@ const LOCATIONS = [
     id: "tatuagem",
     title: "Tatuagem",
     year: 2013,
-    island: "santo-antonio",
-    islandLabel: "Ilha de Santo Antônio",
     placeName: "Pátio de São Pedro",
     address: "Pátio de São Pedro, Santo Antônio, Recife - PE",
     lat: -8.0670,
@@ -175,5 +154,185 @@ const LOCATIONS = [
     director: "Hilton Lacerda",
     screenwriter: "Hilton Lacerda",
     notes: "Cena rodada no Teatro Hermilo Borba Filho, no Pátio de São Pedro."
+  },
+  {
+    id: "arido-movie",
+    title: "Árido Movie",
+    year: 2005,
+    placeName: "Aeroporto Internacional do Recife",
+    address: "Aeroporto Internacional do Recife/Guararapes, Recife - PE",
+    lat: -8.1264,
+    lng: -34.9228,
+    videoUrl: "",
+    synopsis: "Jonas apresenta previsão do tempo em São Paulo quando a morte do pai o obriga a voltar a Pernambuco, onde a avó espera que ele vingue a família.",
+    releaseDate: "14 de abril de 2005",
+    director: "Lírio Ferreira",
+    screenwriter: "Lírio Ferreira, Hilton Lacerda, Sérgio Oliveira, Eduardo Nunes",
+    notes: "Cena de abertura rodada no aeroporto do Recife, ponto de partida da viagem de volta do protagonista."
+  },
+  {
+    id: "tres-marias",
+    title: "As Três Marias",
+    year: 2002,
+    placeName: "BR-232 (Curado)",
+    address: "BR-232, Curado, Recife - PE",
+    lat: -8.0710,
+    lng: -34.9539,
+    videoUrl: "",
+    synopsis: "Uma mãe convoca as três filhas para vingar a morte do marido e dos filhos, numa tragédia passada no sertão de Pernambuco.",
+    releaseDate: "2 de agosto de 2002",
+    director: "Aluizio Abranches",
+    screenwriter: "Aluizio Abranches",
+    notes: "Produção rodada no interior de Pernambuco, com cenas também na BR-232, principal rodovia de acesso ao Recife."
+  },
+  {
+    id: "entre-irmas",
+    title: "Entre Irmãs",
+    year: 2017,
+    placeName: "Estação Central do Recife",
+    address: "Rua Floriano Peixoto, São José, Recife - PE",
+    lat: -8.0675,
+    lng: -34.8836,
+    videoUrl: "",
+    synopsis: "Nos anos 1930, duas irmãs se separam após uma tragédia: uma segue para a alta sociedade do Recife, a outra passa a viver com cangaceiros.",
+    releaseDate: "12 de outubro de 2017",
+    director: "Breno Silveira",
+    screenwriter: "Patrícia Andrade",
+    notes: "Baseado no romance \"A Costureira e o Cangaceiro\", de Frances de Pontes Peebles. A estação histórica do bairro de São José aparece como cenário de época."
+  },
+  {
+    id: "amarelo-manga",
+    title: "Amarelo Manga",
+    year: 2002,
+    placeName: "Avenida Conde da Boa Vista",
+    address: "Avenida Conde da Boa Vista, Boa Vista, Recife - PE",
+    lat: -8.0575,
+    lng: -34.8900,
+    videoUrl: "",
+    synopsis: "Histórias cruzadas em torno de um bar e um hotel no Recife revelam um mosaico de personagens à margem, entre desejo e violência.",
+    releaseDate: "15 de agosto de 2003",
+    director: "Cláudio Assis",
+    screenwriter: "Hilton Lacerda",
+    notes: "Estreia de Cláudio Assis no longa-metragem, com locações pelo centro do Recife."
+  },
+  {
+    id: "lisbela-e-o-prisioneiro",
+    title: "Lisbela e o Prisioneiro",
+    year: 2003,
+    placeName: "Cinema São Luiz",
+    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
+    lat: -8.0621,
+    lng: -34.8821,
+    videoUrl: "",
+    synopsis: "Lisbela sonha com os galãs do cinema quando conhece Leléu, um conquistador perseguido por um matador do seu passado.",
+    releaseDate: "22 de agosto de 2003",
+    director: "Guel Arraes",
+    screenwriter: "Guel Arraes, Pedro Cardoso, Jorge Furtado (baseado na peça de Osman Lins)",
+    notes: "O Cinema São Luiz, na Rua da Aurora, é um dos cinemas de rua mais antigos em atividade no Recife — tombado como patrimônio histórico."
+  },
+  {
+    id: "som-ao-redor",
+    title: "O Som ao Redor",
+    year: 2012,
+    placeName: "Setúbal",
+    address: "Rua Setúbal, Boa Viagem, Recife - PE",
+    lat: -8.1425,
+    lng: -34.9048,
+    videoUrl: "",
+    synopsis: "A chegada de uma milícia de segurança privada a uma rua de classe média do Recife expõe tensões antigas entre vizinhos.",
+    releaseDate: "4 de janeiro de 2013",
+    director: "Kleber Mendonça Filho",
+    screenwriter: "Kleber Mendonça Filho",
+    notes: "Estreia de Kleber Mendonça Filho no longa-metragem, rodado na zona sul do Recife."
+  },
+  {
+    id: "retratos-fantasmas",
+    title: "Retratos Fantasmas",
+    year: 2023,
+    placeName: "Cinema São Luiz",
+    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
+    lat: -8.0621,
+    lng: -34.8821,
+    videoUrl: "",
+    synopsis: "Documentário que revisita os cinemas de rua do centro do Recife e a relação do diretor com a cidade ao longo de décadas.",
+    releaseDate: "24 de agosto de 2023",
+    director: "Kleber Mendonça Filho",
+    screenwriter: "Kleber Mendonça Filho",
+    notes: "Representante brasileiro ao Oscar 2024; revisita o próprio Cinema São Luiz, hoje um templo evangélico, entre outras salas históricas do Recife."
+  },
+  {
+    id: "aquarius",
+    title: "Aquarius",
+    year: 2016,
+    placeName: "Avenida Boa Viagem",
+    address: "Avenida Boa Viagem, Boa Viagem, Recife - PE",
+    lat: -8.1190,
+    lng: -34.9010,
+    videoUrl: "",
+    synopsis: "Clara, moradora do último apartamento ainda habitado de um prédio antigo na praia de Boa Viagem, resiste à pressão de uma construtora para vender o imóvel.",
+    releaseDate: "1 de setembro de 2016",
+    director: "Kleber Mendonça Filho",
+    screenwriter: "Kleber Mendonça Filho",
+    notes: "Protagonizado por Sônia Braga; o prédio fictício do filme fica na orla de Boa Viagem."
+  },
+  {
+    id: "veronica",
+    title: "Verônica",
+    year: 2009,
+    placeName: "Boa Viagem",
+    address: "Boa Viagem, Recife - PE",
+    lat: -8.1140,
+    lng: -34.9000,
+    videoUrl: "",
+    synopsis: "Uma professora exausta após vinte anos de sala de aula se vê obrigada a proteger um aluno cujos pais foram assassinados.",
+    releaseDate: "6 de fevereiro de 2009",
+    director: "Maurício Farias",
+    screenwriter: "Bernardo Guilherme, Maurício Farias",
+    notes: ""
+  },
+  {
+    id: "piedade",
+    title: "Piedade",
+    year: 2019,
+    placeName: "Praia de Piedade",
+    address: "Praia de Piedade, Jaboatão dos Guararapes - PE",
+    lat: -8.1830,
+    lng: -34.9198,
+    videoUrl: "",
+    synopsis: "Segredos de família vêm à tona quando uma petrolífera tenta tomar as terras de uma pequena cidade pernambucana.",
+    releaseDate: "23 de setembro de 2019 (estreia mundial); 5 de agosto de 2021 (cinemas no Brasil)",
+    director: "Cláudio Assis",
+    screenwriter: "Hilton Lacerda, Anna Francisco, Dilner Gomes",
+    notes: "A Praia de Piedade fica no município vizinho de Jaboatão dos Guararapes, na Região Metropolitana do Recife."
+  },
+  {
+    id: "pais-do-desejo",
+    title: "País do Desejo",
+    year: 2012,
+    placeName: "Avenida Boa Viagem",
+    address: "Avenida Boa Viagem, Boa Viagem, Recife - PE",
+    lat: -8.1190,
+    lng: -34.9010,
+    videoUrl: "",
+    synopsis: "Um padre dedicado a uma pequena comunidade pernambucana vê a fé abalada ao se envolver com uma pianista em busca de um transplante.",
+    releaseDate: "25 de janeiro de 2013 (Brasil)",
+    director: "Paulo Caldas",
+    screenwriter: "Paulo Caldas, Pedro Severien",
+    notes: ""
+  },
+  {
+    id: "amor-plastico-e-barulho",
+    title: "Amor, Plástico e Barulho",
+    year: 2013,
+    placeName: "Ibura (UR-1)",
+    address: "Ibura, Recife - PE",
+    lat: -8.1220,
+    lng: -34.9322,
+    videoUrl: "",
+    synopsis: "Uma jovem dançarina sonha em virar cantora de brega e enfrenta as dificuldades de um show business onde tudo, inclusive o amor, é descartável.",
+    releaseDate: "22 de janeiro de 2015",
+    director: "Renata Pinheiro",
+    screenwriter: "Renata Pinheiro, Sérgio Oliveira",
+    notes: ""
   }
 ];

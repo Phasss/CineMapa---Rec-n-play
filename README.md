@@ -1,8 +1,8 @@
 # Cinemapa do Recife Antigo
 
 Site estático (HTML/CSS/JS puro, sem build) com um mapa interativo das locações
-de filmagem nas ilhas históricas do **Recife Antigo (Bairro do Recife)** e de
-**Santo Antônio**, no Centro do Recife.
+de filmagem pelo Recife — do centro histórico (Bairro do Recife e Santo
+Antônio) à zona sul, Ibura e municípios vizinhos.
 
 Cada marcador do mapa abre um painel com:
 
@@ -36,13 +36,15 @@ Abra [`js/data.js`](js/data.js) e edite o array `LOCATIONS`. Cada item segue est
   id: "identificador-unico",
   title: "Nome do Filme",
   year: 2020,
-  island: "recife-antigo", // ou "santo-antonio"
-  islandLabel: "Ilha do Recife Antigo",
   placeName: "Nome curto do local",
   address: "Endereço completo, Recife - PE",
   lat: -8.0631,
   lng: -34.8712,
   videoUrl: "https://www.youtube.com/watch?v=XXXXXXXX&t=90s", // ou link do Google Drive
+  synopsis: "Sinopse curta do filme.",
+  releaseDate: "Data de lançamento (texto livre).",
+  director: "Nome do diretor/dos diretores.",
+  screenwriter: "Nome do roteirista/dos roteiristas.",
   notes: "Observação opcional sobre a cena/local."
 }
 ```
@@ -101,18 +103,16 @@ também funciona na maioria dos navegadores, mas alguns bloqueiam
 
 ## Locais já mapeados
 
-Foram filtrados apenas os filmes cuja locação informada fica nas duas ilhas
-pedidas. Ficaram de fora locações em Boa Viagem, Setúbal, Piedade, Ibura,
-Avenida Conde da Boa Vista, aeroporto, BR-232 e Estação Central — por não
-pertencerem às ilhas do Recife Antigo ou de Santo Antônio.
+O mapa cobre o Recife como um todo, sem distinção por bairro/filtro — do
+centro histórico (Bairro do Recife, Santo Antônio, Boa Vista, São José) à
+zona sul (Boa Viagem, Setúbal, Ibura) e municípios vizinhos (Piedade, em
+Jaboatão dos Guararapes). Todos os locais aparecem juntos na lista e no mapa;
+a busca filtra por filme, local ou endereço.
 
-**Correção importante (revisão com fontes):** o Cinema São Luiz (Rua da
-Aurora, 175) fica no bairro de **Boa Vista**, não em Santo Antônio — [confirmado
-pela Wikipédia](https://pt.wikipedia.org/wiki/Cinema_S%C3%A3o_Luiz) e por
-cadastros de endereço da região. Por isso, *Lisbela e o Prisioneiro* e
-*Retratos Fantasmas* foram **removidos** do mapa: ficam fora das duas ilhas
-do escopo. Se quiser incluí-los mesmo assim (ex.: um mapa mais amplo do
-Centro do Recife), é só adicioná-los de volta em `js/data.js`.
+O Cinema São Luiz (Rua da Aurora, 175) fica no bairro de **Boa Vista** —
+[confirmado pela Wikipédia](https://pt.wikipedia.org/wiki/Cinema_S%C3%A3o_Luiz).
+*Lisbela e o Prisioneiro* e *Retratos Fantasmas* foram rodados no mesmo
+cinema e aparecem agrupados num único marcador.
 
 A Ponte Maurício de Nassau liga o Bairro do Recife a Santo Antônio — [confirmado
 pela Pesquisa Escolar da Fundaj](https://pesquisaescolar.fundaj.gov.br/pt-br/artigo/ponte-mauricio-de-nassau/)

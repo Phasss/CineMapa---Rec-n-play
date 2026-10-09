@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
   <title>Cinemapa do Recife Antigo</title>
-  <meta name="description" content="Mapa interativo de locações de filmagem nas ilhas do Recife Antigo e de Santo Antônio, no Centro do Recife." />
-  <meta name="theme-color" content="#122a5c" />
+  <meta name="description" content="Mapa interativo de locações de filmagem pelo Recife — do centro histórico à zona sul, com sinopse, ficha técnica e rota a pé para cada filme." />
+  <meta name="theme-color" content="#1e4bd8" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%9E%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 
@@ -19,15 +19,12 @@
 <body>
 
   <header class="site-header">
+    <img class="header-accent" src="assets/elemento02.png" alt="" aria-hidden="true" />
     <div class="header-inner">
-      <div class="brand-logos">
-        <img class="logo-recife" src="assets/logo-recife-e-pra-ficar.png" alt="Recife é pra ficar — Secretaria de Turismo e Lazer" />
-        <img class="logo-observatorio" src="assets/logo-observatorio-turismo.png" alt="Observatório de Turismo do Recife" />
-      </div>
-      <div class="brand-text">
-        <h1>Cinemapa do Recife Antigo</h1>
-        <p class="subtitle">Locações de cinema no Recife Antigo e em Santo Antônio</p>
-      </div>
+      <h1 class="brand-logo">
+        <img class="brand-logo-main" src="assets/texto.png" alt="Cinemapa de Recife Antigo" />
+      </h1>
+      <img class="brand-marcas" src="assets/marcas-branco.png" alt="Recife é pra Ficar — Secretaria de Turismo e Lazer — Prefeitura do Recife" />
     </div>
   </header>
 
@@ -37,16 +34,6 @@
         <div class="search-box">
           <label for="search" class="visually-hidden">Buscar filme</label>
           <input type="search" id="search" placeholder="Buscar por filme ou local..." autocomplete="off" />
-        </div>
-
-        <div class="filters" role="group" aria-label="Filtrar por ilha">
-          <button class="filter-btn is-active" data-island="all">Todas as ilhas</button>
-          <button class="filter-btn" data-island="recife-antigo">
-            <span class="dot dot--recife-antigo"></span> Recife Antigo
-          </button>
-          <button class="filter-btn" data-island="santo-antonio">
-            <span class="dot dot--santo-antonio"></span> Santo Antônio
-          </button>
         </div>
 
         <div class="result-count" id="resultCount" aria-live="polite"></div>
@@ -83,6 +70,7 @@
   <div class="detail-overlay" id="detailOverlay" hidden>
     <div class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
       <div class="detail-header">
+        <img class="detail-header-accent" src="assets/elemento01.png" alt="" aria-hidden="true" />
         <div class="detail-header-text">
           <span class="detail-badge" id="detailIsland"></span>
           <h2 id="detailTitle"></h2>
@@ -92,11 +80,6 @@
       </div>
 
       <div class="detail-body">
-        <span class="island-tag" id="detailIslandTag">
-          <span class="dot" id="detailIslandDot"></span>
-          <span id="detailIslandLabel"></span>
-        </span>
-
         <p class="detail-synopsis" id="detailSynopsis"></p>
 
         <div class="detail-video" id="detailVideoWrap">
@@ -131,7 +114,8 @@
 
       <div class="detail-footer">
         <a class="btn btn-primary" id="detailDirections" href="#" target="_blank" rel="noopener">
-          🚶 Traçar rota a pé
+          <img class="btn-icon" src="assets/pes.png" alt="" aria-hidden="true" />
+          Traçar rota a pé
         </a>
       </div>
     </div>
