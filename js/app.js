@@ -7,7 +7,9 @@
   const state = {
     searchTerm: "",
     activeId: null,
-    mobileTab: "mapa"
+    mobileTab: "mapa",
+    sortBy: "title",
+    zoneFilter: "all"
   };
 
   /** @type {Map<string, {lat:number, lng:number, locs:object[], marker:L.Marker}>} */
@@ -142,6 +144,33 @@
       state.searchTerm = e.target.value.trim().toLowerCase();
       renderList();
     });
+
+    document.querySelectorAll(".sort-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.sortBy = btn.dataset.sort;
+        document.querySelectorAll(".sort-btn").forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+
+        const zoneRow = document.getElementById("zoneRow");
+        const isLocalidade = state.sortBy === "place";
+        zoneRow.hidden = !isLocalidade;
+        if (!isLocalidade) {
+          state.zoneFilter = "all";
+          zoneRow.querySelectorAll(".zone-btn").forEach((b) => b.classList.toggle("is-active", b.dataset.zone === "all"));
+        }
+
+        renderList();
+      });
+    });
+
+    document.querySelectorAll(".zone-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.zoneFilter = btn.dataset.zone;
+        document.querySelectorAll(".zone-btn").forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        renderList();
+      });
+    });
   }
 
   function setupDetailPanel() {
@@ -176,10 +205,16 @@
   }
 
   function getFilteredLocations() {
-    return LOCATIONS.filter((loc) => {
+    const filtered = LOCATIONS.filter((loc) => {
       const haystack = `${loc.title} ${loc.placeName} ${loc.address}`.toLowerCase();
-      return !state.searchTerm || haystack.includes(state.searchTerm);
+      const matchesSearch = !state.searchTerm || haystack.includes(state.searchTerm);
+      const matchesZone =
+        state.sortBy !== "place" || state.zoneFilter === "all" || loc.zone === state.zoneFilter;
+      return matchesSearch && matchesZone;
     });
+
+    const sortKey = state.sortBy === "place" ? "placeName" : "title";
+    return filtered.sort((a, b) => a[sortKey].localeCompare(b[sortKey], "pt-BR"));
   }
 
   function renderList() {

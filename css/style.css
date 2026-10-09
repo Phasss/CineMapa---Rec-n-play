@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/Sora-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-bg: #f4f6fb;
   --color-bg-alt: #eaeef8;
@@ -240,6 +248,89 @@ main {
 
 .sidebar-close:hover {
   background: rgba(255, 255, 255, 0.22);
+}
+
+.sort-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.sort-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.sort-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sort-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-header);
+}
+
+.sort-btn.is-active {
+  background: var(--color-header);
+  border-color: var(--color-header);
+  color: #ffffff;
+}
+
+.zone-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px 10px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.zone-row[hidden] {
+  display: none;
+}
+
+.zone-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.zone-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-cta);
+}
+
+.zone-btn.is-active {
+  background: var(--color-cta);
+  border-color: var(--color-cta);
+  color: #ffffff;
 }
 
 .location-list {
@@ -511,7 +602,7 @@ main {
   position: absolute;
   top: -26px;
   right: -28px;
-  width: 120px;
+  width: 230px;
   height: auto;
   opacity: 0.9;
   pointer-events: none;
@@ -559,12 +650,13 @@ main {
 }
 
 #detailTitle {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: "Sora", var(--font-display), sans-serif;
+  font-weight: 800;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   line-height: 1.25;
-  color: #ffffff;
+  color: var(--color-cta);
+  text-transform: uppercase;
 }
 
 .detail-meta {

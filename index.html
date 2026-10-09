@@ -46,6 +46,17 @@
           <h2>Locais no mapa</h2>
           <button type="button" class="sidebar-close" id="sidebarClose" aria-label="Voltar ao mapa">&times;</button>
         </div>
+        <div class="sort-row" role="group" aria-label="Ordenar lista">
+          <span class="sort-label">Ordenar por</span>
+          <button type="button" class="sort-btn is-active" data-sort="title">Nome</button>
+          <button type="button" class="sort-btn" data-sort="place">Localidade</button>
+        </div>
+        <div class="zone-row" id="zoneRow" role="group" aria-label="Filtrar por zona" hidden>
+          <button type="button" class="zone-btn is-active" data-zone="all">Todas</button>
+          <button type="button" class="zone-btn" data-zone="centro">Centro</button>
+          <button type="button" class="zone-btn" data-zone="zona-sul">Zona Sul</button>
+          <button type="button" class="zone-btn" data-zone="varzea">Várzea</button>
+        </div>
         <ul class="location-list" id="locationList"></ul>
       </aside>
 
