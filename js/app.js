@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  const PIN_COLOR = "#ec1e79";
   const MOBILE_BREAKPOINT = 900;
 
   const state = {
@@ -95,11 +94,8 @@
         : "";
 
     const html = `
-      <span class="pin" style="--pin-color:${PIN_COLOR}">
-        <svg viewBox="0 0 32 40" width="34" height="42">
-          <path d="M16 0C7.2 0 0 7.2 0 16c0 11 16 24 16 24s16-13 16-24C32 7.2 24.8 0 16 0z" fill="var(--pin-color)"/>
-          <circle cx="16" cy="16" r="7" fill="#12181a"/>
-        </svg>
+      <span class="pin">
+        <img src="assets/icon2.png" alt="" width="38" height="47" />
         ${badge}
       </span>
     `;
@@ -107,9 +103,9 @@
     return L.divIcon({
       className: "pin-icon",
       html,
-      iconSize: [34, 42],
-      iconAnchor: [17, 40],
-      popupAnchor: [0, -36]
+      iconSize: [38, 47],
+      iconAnchor: [19, 47],
+      popupAnchor: [0, -42]
     });
   }
 
