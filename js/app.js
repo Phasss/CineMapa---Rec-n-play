@@ -305,7 +305,12 @@
     const emptyMsg = document.getElementById("detailVideoEmpty");
     const embedUrl = getEmbeddableUrl(loc.videoUrl);
 
-    if (loc.videoUrl) {
+    if (isLocalVideo(loc.videoUrl)) {
+      linkBtn.hidden = true;
+      emptyMsg.hidden = true;
+      embedWrap.innerHTML = `<video src="${escapeHtml(loc.videoUrl)}" controls playsinline preload="metadata" title="Trecho de ${escapeHtml(loc.title)}"></video>`;
+      embedWrap.hidden = false;
+    } else if (loc.videoUrl) {
       linkBtn.hidden = false;
       linkBtn.href = loc.videoUrl;
       emptyMsg.hidden = true;
@@ -339,6 +344,14 @@
   function closeDetail() {
     document.getElementById("detailOverlay").hidden = true;
     document.body.classList.remove("detail-open");
+    // Para o vídeo/iframe ao fechar o painel
+    const embedWrap = document.getElementById("detailVideoEmbed");
+    embedWrap.innerHTML = "";
+    embedWrap.hidden = true;
+  }
+
+  function isLocalVideo(url) {
+    return !!url && /\.(mp4|webm)(\?|#|$)/i.test(url) && !/^https?:/i.test(url);
   }
 
   function getEmbeddableUrl(url) {

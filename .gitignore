@@ -4,6 +4,10 @@ Thumbs.db
 # Arquivos de origem das logos (não usados diretamente pelo site; ver assets/)
 *.mov
 *.mp4
+# ...exceto os trechos otimizados usados pelo site
+!videos/*.mp4
+# Cortes originais em alta resolução (fonte dos arquivos em videos/)
+/Cortes dos Filmes/
 /Imagem colada.png
 /RECIFE_E_PRA_FICAR_LOGO_COR-05.png
 

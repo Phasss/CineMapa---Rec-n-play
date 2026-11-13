@@ -1,14 +1,14 @@
 # Cinemapa do Recife Antigo
 
 Site estático (HTML/CSS/JS puro, sem build) com um mapa interativo das locações
-de filmagem pelo Recife — do centro histórico (Bairro do Recife e Santo
-Antônio) à zona sul, Ibura e municípios vizinhos.
+de filmagem do roteiro "Recife coisa de cinema" (Bairro do Recife e Santo
+Antônio), com o trecho de cada cena tocando dentro do próprio painel.
 
 Cada marcador do mapa abre um painel com:
 
 - Nome do filme, ano e local;
 - Endereço/ponto de referência;
-- Link (e player embutido, se for YouTube) para o trecho da cena;
+- Player com o trecho da cena (vídeo em `videos/`, ou YouTube embutido);
 - Botão "Como chegar a pé" que abre o Google Maps já com a rota para pedestres.
 
 Feito **mobile-first**: no celular, um botão de menu (☰) no cabeçalho abre a
@@ -25,6 +25,7 @@ index.html        página principal
 css/style.css      estilos
 js/data.js         base de dados dos locais (edite aqui)
 js/app.js          lógica do mapa e da interface
+videos/            trechos das cenas (.mp4 otimizados, 720p)
 ```
 
 ## Como adicionar/editar locais
@@ -40,7 +41,8 @@ Abra [`js/data.js`](js/data.js) e edite o array `LOCATIONS`. Cada item segue est
   address: "Endereço completo, Recife - PE",
   lat: -8.0631,
   lng: -34.8712,
-  videoUrl: "https://www.youtube.com/watch?v=XXXXXXXX&t=90s", // ou link do Google Drive
+  zone: "recife-antigo", // "recife-antigo", "santo-antonio" ou "torre" (filtro Localidade)
+  videoUrl: "videos/identificador-unico.mp4", // ou URL do YouTube/Google Drive
   synopsis: "Sinopse curta do filme.",
   releaseDate: "Data de lançamento (texto livre).",
   director: "Nome do diretor/dos diretores.",
@@ -53,7 +55,15 @@ Abra [`js/data.js`](js/data.js) e edite o array `LOCATIONS`. Cada item segue est
 direito exatamente sobre o ponto → clique nas coordenadas do menu (são copiadas
 automaticamente) → cole em `lat` e `lng`.
 
-**Vídeo:** links do YouTube são exibidos com player embutido automaticamente.
+**Vídeo:** arquivos `.mp4` da pasta `videos/` tocam direto no painel. Os
+originais em alta resolução ficam em `Cortes dos Filmes/` (fora do git); para
+gerar a versão leve usada no site:
+
+```bash
+ffmpeg -i "Cortes dos Filmes/Filme/cena.mp4" -vf "scale=-2:'min(720,ih)'" -c:v libx264 -crf 26 -preset slow -pix_fmt yuv420p -c:a aac -b:a 112k -movflags +faststart videos/identificador-unico.mp4
+```
+
+Links do YouTube são exibidos com player embutido automaticamente.
 Links do Google Drive (ou qualquer outro) aparecem como botão "Assistir trecho"
 que abre em nova aba.
 
@@ -64,9 +74,8 @@ que abre em nova aba.
 
 **Agrupamento automático:** se dois locais tiverem `lat`/`lng` **idênticos**,
 o mapa junta os dois em um único marcador com selo de contagem (ex.: "2"), e o
-popup lista os filmes separadamente. É o que acontece hoje com os dois filmes
-sem endereço exato (marcados no Marco Zero) e com os dois filmes no Pátio de
-São Pedro. Para você "separar" dois locais de um mesmo grupo, basta cadastrar
+popup lista os filmes separadamente. É o que acontece hoje com os dois filmes no
+Pátio de São Pedro. Para você "separar" dois locais de um mesmo grupo, basta cadastrar
 coordenadas com uma pequena diferença entre eles.
 
 ## Rodar localmente
@@ -103,26 +112,22 @@ também funciona na maioria dos navegadores, mas alguns bloqueiam
 
 ## Locais já mapeados
 
-O mapa cobre o Recife como um todo, sem distinção por bairro/filtro — do
-centro histórico (Bairro do Recife, Santo Antônio, Boa Vista, São José) à
-zona sul (Boa Viagem, Setúbal, Ibura) e municípios vizinhos (Piedade, em
-Jaboatão dos Guararapes). Todos os locais aparecem juntos na lista e no mapa;
-a busca filtra por filme, local ou endereço.
+Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal):
 
-O Cinema São Luiz (Rua da Aurora, 175) fica no bairro de **Boa Vista** —
-[confirmado pela Wikipédia](https://pt.wikipedia.org/wiki/Cinema_S%C3%A3o_Luiz).
-*Lisbela e o Prisioneiro* e *Retratos Fantasmas* foram rodados no mesmo
-cinema e aparecem agrupados num único marcador.
+| Filme | Ano | Local | Bairro | Trecho |
+|---|---|---|---|---|
+| O Baile Perfumado | 1996 | Edifício Chanteclair | Recife Antigo | ✔ |
+| O Agente Secreto | 2025 | Marco Zero | Recife Antigo | ✔ |
+| Febre do Rato | 2011 | Rua da Moeda | Recife Antigo | ✔ |
+| A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
+| Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
+| Parahyba Mulher Macho | 1983 | Praça da República | Santo Antônio | ✔ |
+| 1817: A Revolução Esquecida | 2017 | Palácio do Campo das Princesas | Santo Antônio | ✔ |
+| Prometo que um dia deixo essa cidade | 2019 | Rua Imperador Dom Pedro II | Santo Antônio | — |
+| Gonzaga: De Pai pra Filho | 2012 | Pátio de São Pedro | Santo Antônio | — |
+| Tatuagem | 2013 | Pátio de São Pedro | Santo Antônio | — |
+| As Três Marias | 2002 | Igreja de Nossa Senhora do Rosário | Torre | ✔ |
 
-A Ponte Maurício de Nassau liga o Bairro do Recife a Santo Antônio — [confirmado
-pela Pesquisa Escolar da Fundaj](https://pesquisaescolar.fundaj.gov.br/pt-br/artigo/ponte-mauricio-de-nassau/)
-— e foi mantida do lado do Recife Antigo, por onde a locação (o filme de 1926)
-é mais associada.
-
-Coordenadas de Praça da República, Palácio do Campo das Princesas, Pátio de
-São Pedro, Rua da Moeda, Rua Imperador Dom Pedro II e Ponte Maurício de Nassau
-foram obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/)
-em agosto de 2026. Para *O Baile Perfumado* e *Agente Secreto*, cujo endereço
-exato da cena não foi informado, o marcador foi posicionado no Marco Zero,
-ponto de referência mais conhecido do Bairro do Recife (os dois filmes
-aparecem agrupados no mesmo marcador — veja "Agrupamento automático" acima).
+Coordenadas obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/).
+*Gonzaga* e *Tatuagem* dividem o marcador do Pátio de São Pedro (veja
+"Agrupamento automático" acima).
