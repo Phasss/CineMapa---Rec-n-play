@@ -118,6 +118,7 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 | O Baile Perfumado | 1996 | Associação Comercial de Pernambuco | Recife Antigo | ✔ |
 | O Agente Secreto | 2025 | Vista da Ponte Duarte Coelho | Boa Vista | ✔ |
 | Lisbela e o Prisioneiro | 2003 | Cinema São Luiz | Boa Vista | ✔ |
+| Retratos Fantasmas | 2023 | Cinema São Luiz | Boa Vista | ✔ |
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
 | Gonzaga: De Pai pra Filho | 2012 | Marco Zero | Recife Antigo | ✔ |
@@ -127,3 +128,5 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 | 1817: A Revolução Esquecida | 2017 | Palácio do Campo das Princesas | Santo Antônio | ✔ |
 
 Coordenadas obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/).
+*Lisbela e o Prisioneiro* e *Retratos Fantasmas* dividem o marcador do Cinema
+São Luiz (veja "Agrupamento automático" acima).

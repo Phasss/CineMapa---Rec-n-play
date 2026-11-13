@@ -16,7 +16,8 @@
  *
  * Dois locais com lat/lng EXATAMENTE iguais são agrupados automaticamente
  * em um único marcador no mapa (com um selo de contagem), em vez de ficarem
- * sobrepostos.
+ * sobrepostos. É o caso do Cinema São Luiz abaixo, onde dois filmes
+ * dividem a mesma referência.
  *
  * Coordenadas obtidas via OpenStreetMap/Nominatim e fontes públicas
  * (Wikipédia, sites oficiais). Ver README.md para o histórico de revisão.
@@ -182,5 +183,21 @@ const LOCATIONS = [
     director: "Guel Arraes",
     screenwriter: "Guel Arraes, Pedro Cardoso, Jorge Furtado (baseado na peça de Osman Lins)",
     notes: "O Cinema São Luiz, na Rua da Aurora, é um dos cinemas de rua mais antigos em atividade no Recife — tombado como patrimônio histórico."
+  },
+  {
+    id: "retratos-fantasmas",
+    title: "Retratos Fantasmas",
+    year: 2023,
+    zone: "boa-vista",
+    placeName: "Cinema São Luiz",
+    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
+    lat: -8.06211,
+    lng: -34.88181,
+    videoUrl: "videos/retratos-fantasmas.mp4",
+    synopsis: "Documentário que revisita os cinemas de rua do centro do Recife e a relação do diretor com a cidade ao longo de décadas.",
+    releaseDate: "24 de agosto de 2023",
+    director: "Kleber Mendonça Filho",
+    screenwriter: "Kleber Mendonça Filho",
+    notes: "Representante brasileiro ao Oscar 2024; revisita o Cinema São Luiz entre outras salas históricas do centro do Recife."
   }
 ];
