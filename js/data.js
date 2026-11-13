@@ -59,17 +59,17 @@ const LOCATIONS = [
     id: "febre-do-rato",
     title: "Febre do Rato",
     year: 2011,
-    zone: "recife-antigo",
-    placeName: "Rua da Moeda",
-    address: "Rua da Moeda, Bairro do Recife, Recife - PE",
-    lat: -8.0646,
-    lng: -34.8731,
+    zone: "santo-antonio",
+    placeName: "Avenida Dantas Barreto",
+    address: "Avenida Dantas Barreto, Santo Antônio, Recife - PE",
+    lat: -8.0639,
+    lng: -34.8786,
     videoUrl: "videos/febre-do-rato.mp4",
     synopsis: "Zizo é um poeta anarquista que circula pelas ruas do Recife entre poesia, desejo e transgressão. Sua relação com Eneida movimenta uma história marcada pela liberdade e pelo confronto com as convenções.",
     releaseDate: "15 de junho de 2012",
     director: "Cláudio Assis",
     screenwriter: "Hilton Lacerda",
-    notes: "Rua histórica de galerias de arte e boemia no Bairro do Recife."
+    notes: "Cortejo em cima de carros pelas ruas do centro, na região da Avenida Dantas Barreto, em Santo Antônio."
   },
   {
     id: "filha-do-advogado",
@@ -120,22 +120,6 @@ const LOCATIONS = [
     notes: "Sede do governo de Pernambuco desde 1841, na Praça da República."
   },
   {
-    id: "prometo-que-um-dia",
-    title: "Prometo que um dia deixo essa cidade",
-    year: 2019,
-    zone: "santo-antonio",
-    placeName: "Rua Imperador Dom Pedro II",
-    address: "Rua Imperador Dom Pedro II, Santo Antônio, Recife - PE",
-    lat: -8.0629,
-    lng: -34.8770,
-    videoUrl: "",
-    synopsis: "Entre ruas e deslocamentos pelo Recife, uma personagem atravessa diferentes situações enquanto constrói sua relação com a cidade. A paisagem urbana participa diretamente da narrativa.",
-    releaseDate: "2019",
-    director: "Sérgio Oliveira",
-    screenwriter: "Sérgio Oliveira",
-    notes: ""
-  },
-  {
     id: "gonzaga-pai-filho",
     title: "Gonzaga: De Pai pra Filho",
     year: 2012,
@@ -150,22 +134,6 @@ const LOCATIONS = [
     director: "Breno Silveira",
     screenwriter: "Patricia Andrade, Breno Silveira",
     notes: "Cena de show de Luiz Gonzaga para a multidão no Marco Zero, a Praça Rio Branco, no Bairro do Recife."
-  },
-  {
-    id: "tatuagem",
-    title: "Tatuagem",
-    year: 2013,
-    zone: "santo-antonio",
-    placeName: "Pátio de São Pedro",
-    address: "Pátio de São Pedro, Santo Antônio, Recife - PE",
-    lat: -8.0670,
-    lng: -34.8790,
-    videoUrl: "",
-    synopsis: "Durante a ditadura militar, um jovem soldado se envolve com Clécio, artista e líder de um grupo teatral. Entre os dois nasce uma relação que atravessa desejo, arte e liberdade.",
-    releaseDate: "15 de agosto de 2013",
-    director: "Hilton Lacerda",
-    screenwriter: "Hilton Lacerda",
-    notes: "Cena rodada no Teatro Hermilo Borba Filho, no Pátio de São Pedro."
   },
   {
     id: "arido-movie",
@@ -198,5 +166,21 @@ const LOCATIONS = [
     director: "Cláudio Assis",
     screenwriter: "Hilton Lacerda",
     notes: "A cena percorre a Avenida Marquês de Olinda e em seguida entra na Ponte Maurício de Nassau, em direção a Santo Antônio."
+  },
+  {
+    id: "lisbela-e-o-prisioneiro",
+    title: "Lisbela e o Prisioneiro",
+    year: 2003,
+    zone: "boa-vista",
+    placeName: "Cinema São Luiz",
+    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
+    lat: -8.06211,
+    lng: -34.88181,
+    videoUrl: "videos/lisbela-e-o-prisioneiro.mp4",
+    synopsis: "Lisbela sonha com os galãs do cinema quando conhece Leléu, um conquistador perseguido por um matador do seu passado.",
+    releaseDate: "22 de agosto de 2003",
+    director: "Guel Arraes",
+    screenwriter: "Guel Arraes, Pedro Cardoso, Jorge Furtado (baseado na peça de Osman Lins)",
+    notes: "O Cinema São Luiz, na Rua da Aurora, é um dos cinemas de rua mais antigos em atividade no Recife — tombado como patrimônio histórico."
   }
 ];

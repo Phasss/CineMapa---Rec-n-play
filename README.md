@@ -117,14 +117,13 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 |---|---|---|---|---|
 | O Baile Perfumado | 1996 | Associação Comercial de Pernambuco | Recife Antigo | ✔ |
 | O Agente Secreto | 2025 | Vista da Ponte Duarte Coelho | Boa Vista | ✔ |
-| Febre do Rato | 2011 | Rua da Moeda | Recife Antigo | ✔ |
+| Lisbela e o Prisioneiro | 2003 | Cinema São Luiz | Boa Vista | ✔ |
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
 | Gonzaga: De Pai pra Filho | 2012 | Marco Zero | Recife Antigo | ✔ |
 | Amarelo Manga | 2002 | Av. Marquês de Olinda e Ponte Maurício de Nassau | Recife Antigo | ✔ |
+| Febre do Rato | 2011 | Avenida Dantas Barreto | Santo Antônio | ✔ |
 | Parahyba Mulher Macho | 1983 | Praça da República | Santo Antônio | ✔ |
 | 1817: A Revolução Esquecida | 2017 | Palácio do Campo das Princesas | Santo Antônio | ✔ |
-| Prometo que um dia deixo essa cidade | 2019 | Rua Imperador Dom Pedro II | Santo Antônio | — |
-| Tatuagem | 2013 | Pátio de São Pedro | Santo Antônio | — |
 
 Coordenadas obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/).
