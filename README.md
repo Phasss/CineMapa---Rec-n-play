@@ -117,7 +117,7 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 | Filme | Ano | Local | Bairro | Trecho |
 |---|---|---|---|---|
 | O Baile Perfumado | 1996 | Edifício Chanteclair | Recife Antigo | ✔ |
-| O Agente Secreto | 2025 | Cinema São Luiz (Rua da Aurora) | Boa Vista | ✔ |
+| O Agente Secreto | 2025 | Vista da Ponte Duarte Coelho | Boa Vista | ✔ |
 | Febre do Rato | 2011 | Rua da Moeda | Recife Antigo | ✔ |
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |

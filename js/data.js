@@ -45,16 +45,16 @@ const LOCATIONS = [
     title: "O Agente Secreto",
     year: 2025,
     zone: "boa-vista",
-    placeName: "Cinema São Luiz",
-    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
-    lat: -8.06211,
-    lng: -34.88181,
+    placeName: "Vista da Ponte Duarte Coelho",
+    address: "Ponte Duarte Coelho, Boa Vista, Recife - PE",
+    lat: -8.062377428539778,
+    lng: -34.8811299999189,
     videoUrl: "videos/agente-secreto.mp4",
     synopsis: "Em 1977, Marcelo retorna ao Recife em meio à ditadura militar e se vê envolvido em uma trama de perseguições e memórias. A cidade ocupa um papel central na construção da narrativa.",
     releaseDate: "6 de novembro de 2025",
     director: "Kleber Mendonça Filho",
     screenwriter: "Kleber Mendonça Filho",
-    notes: "Cinema de rua de 1952 na Rua da Aurora, às margens do Capibaribe, tombado como patrimônio histórico."
+    notes: "Da janela, a cena mostra a Ponte Duarte Coelho sobre o Capibaribe, ligando a Rua da Aurora à Avenida Guararapes."
   },
   {
     id: "febre-do-rato",
