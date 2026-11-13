@@ -74,8 +74,7 @@ que abre em nova aba.
 
 **Agrupamento automático:** se dois locais tiverem `lat`/`lng` **idênticos**,
 o mapa junta os dois em um único marcador com selo de contagem (ex.: "2"), e o
-popup lista os filmes separadamente. É o que acontece hoje com os dois filmes no
-Pátio de São Pedro. Para você "separar" dois locais de um mesmo grupo, basta cadastrar
+popup lista os filmes separadamente. Para você "separar" dois locais de um mesmo grupo, basta cadastrar
 coordenadas com uma pequena diferença entre eles.
 
 ## Rodar localmente
@@ -116,18 +115,16 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 
 | Filme | Ano | Local | Bairro | Trecho |
 |---|---|---|---|---|
-| O Baile Perfumado | 1996 | Edifício Chanteclair | Recife Antigo | ✔ |
+| O Baile Perfumado | 1996 | Associação Comercial de Pernambuco | Recife Antigo | ✔ |
 | O Agente Secreto | 2025 | Vista da Ponte Duarte Coelho | Boa Vista | ✔ |
 | Febre do Rato | 2011 | Rua da Moeda | Recife Antigo | ✔ |
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
+| Gonzaga: De Pai pra Filho | 2012 | Marco Zero | Recife Antigo | ✔ |
 | Parahyba Mulher Macho | 1983 | Praça da República | Santo Antônio | ✔ |
 | 1817: A Revolução Esquecida | 2017 | Palácio do Campo das Princesas | Santo Antônio | ✔ |
 | Prometo que um dia deixo essa cidade | 2019 | Rua Imperador Dom Pedro II | Santo Antônio | — |
-| Gonzaga: De Pai pra Filho | 2012 | Pátio de São Pedro | Santo Antônio | — |
 | Tatuagem | 2013 | Pátio de São Pedro | Santo Antônio | — |
 | As Três Marias | 2002 | Igreja de Nossa Senhora do Rosário | Torre | ✔ |
 
 Coordenadas obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/).
-*Gonzaga* e *Tatuagem* dividem o marcador do Pátio de São Pedro (veja
-"Agrupamento automático" acima).

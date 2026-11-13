@@ -16,8 +16,7 @@
  *
  * Dois locais com lat/lng EXATAMENTE iguais são agrupados automaticamente
  * em um único marcador no mapa (com um selo de contagem), em vez de ficarem
- * sobrepostos. É o caso do Pátio de São Pedro abaixo, onde dois filmes
- * dividem a mesma referência.
+ * sobrepostos.
  *
  * Coordenadas obtidas via OpenStreetMap/Nominatim e fontes públicas
  * (Wikipédia, sites oficiais). Ver README.md para o histórico de revisão.
@@ -29,16 +28,16 @@ const LOCATIONS = [
     title: "O Baile Perfumado",
     year: 1996,
     zone: "recife-antigo",
-    placeName: "Edifício Chanteclair",
-    address: "Rua Madre de Deus, Bairro do Recife, Recife - PE",
-    lat: -8.0638,
-    lng: -34.8737,
+    placeName: "Associação Comercial de Pernambuco",
+    address: "Avenida Alfredo Lisboa, Bairro do Recife (próximo ao Marco Zero), Recife - PE",
+    lat: -8.062806158597324,
+    lng: -34.87154943711513,
     videoUrl: "videos/baile-perfumado.mp4",
     synopsis: "Benjamin Abrahão é um fotógrafo que se aventura pelo sertão para registrar Lampião e seu bando. A obra mistura ficção e história para reconstruir o universo do cangaço.",
     releaseDate: "26 de julho de 1997",
     director: "Paulo Caldas, Lírio Ferreira",
     screenwriter: "Paulo Caldas, Lírio Ferreira, Hilton Lacerda",
-    notes: "Casarão eclético do início do século XX no Bairro do Recife, entre a Rua Madre de Deus e o Cais da Alfândega."
+    notes: "Prédio histórico da Associação Comercial de Pernambuco, ao lado do Marco Zero, no Bairro do Recife."
   },
   {
     id: "agente-secreto",
@@ -140,17 +139,17 @@ const LOCATIONS = [
     id: "gonzaga-pai-filho",
     title: "Gonzaga: De Pai pra Filho",
     year: 2012,
-    zone: "santo-antonio",
-    placeName: "Pátio de São Pedro",
-    address: "Pátio de São Pedro, Santo Antônio, Recife - PE",
-    lat: -8.0670,
-    lng: -34.8790,
-    videoUrl: "",
+    zone: "recife-antigo",
+    placeName: "Marco Zero",
+    address: "Praça Rio Branco (Marco Zero), Bairro do Recife, Recife - PE",
+    lat: -8.063059777412043,
+    lng: -34.871258417429424,
+    videoUrl: "videos/gonzaga-pai-filho.mp4",
     synopsis: "A relação entre Luiz Gonzaga e Gonzaguinha é o centro da história, marcada por música, conflitos e diferentes formas de enxergar a vida. A narrativa atravessa momentos importantes da trajetória dos dois.",
     releaseDate: "26 de outubro de 2012",
     director: "Breno Silveira",
     screenwriter: "Patricia Andrade, Breno Silveira",
-    notes: "Entorno da Igreja de São Pedro dos Clérigos, com o Teatro Hermilo Borba Filho."
+    notes: "Cena de show de Luiz Gonzaga para a multidão no Marco Zero, a Praça Rio Branco, no Bairro do Recife."
   },
   {
     id: "tatuagem",
