@@ -11,7 +11,7 @@
  *    videoUrl: "videos/<nome>.mp4" — ele toca dentro do painel. Também
  *    aceita URL do YouTube (com &t=90s) ou link do Google Drive.
  *
- * zone aceita: "recife-antigo", "santo-antonio", "boa-vista" ou "torre" — usado no
+ * zone aceita: "recife-antigo", "santo-antonio" ou "boa-vista" — usado no
  * filtro "Localidade" da lista.
  *
  * Dois locais com lat/lng EXATAMENTE iguais são agrupados automaticamente
@@ -168,22 +168,6 @@ const LOCATIONS = [
     notes: "Cena rodada no Teatro Hermilo Borba Filho, no Pátio de São Pedro."
   },
   {
-    id: "tres-marias",
-    title: "As Três Marias",
-    year: 2002,
-    zone: "torre",
-    placeName: "Igreja de Nossa Senhora do Rosário",
-    address: "Praça Professor Campelo Barreto, Torre, Recife - PE",
-    lat: -8.0470,
-    lng: -34.9132,
-    videoUrl: "videos/tres-marias.mp4",
-    synopsis: "Uma mãe convoca as três filhas para vingar a morte do marido e dos filhos, numa tragédia passada no sertão de Pernambuco.",
-    releaseDate: "2 de agosto de 2002",
-    director: "Aluizio Abranches",
-    screenwriter: "Aluizio Abranches",
-    notes: "Matriz de Nossa Senhora do Rosário, a igreja da Torre, na praça central do bairro."
-  },
-  {
     id: "arido-movie",
     title: "Árido Movie",
     year: 2005,
@@ -198,5 +182,21 @@ const LOCATIONS = [
     director: "Lírio Ferreira",
     screenwriter: "Lírio Ferreira, Hilton Lacerda, Sérgio Oliveira, Eduardo Nunes",
     notes: "Vista aérea do porto, no extremo norte do Bairro do Recife."
+  },
+  {
+    id: "amarelo-manga",
+    title: "Amarelo Manga",
+    year: 2002,
+    zone: "recife-antigo",
+    placeName: "Av. Marquês de Olinda e Ponte Maurício de Nassau",
+    address: "Avenida Marquês de Olinda, Bairro do Recife, Recife - PE",
+    lat: -8.063638718158245,
+    lng: -34.873844067008505,
+    videoUrl: "videos/amarelo-manga.mp4",
+    synopsis: "Histórias cruzadas em torno de um bar e um hotel no Recife revelam um mosaico de personagens à margem, entre desejo e violência.",
+    releaseDate: "15 de agosto de 2003",
+    director: "Cláudio Assis",
+    screenwriter: "Hilton Lacerda",
+    notes: "A cena percorre a Avenida Marquês de Olinda e em seguida entra na Ponte Maurício de Nassau, em direção a Santo Antônio."
   }
 ];

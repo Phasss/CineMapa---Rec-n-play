@@ -41,7 +41,7 @@ Abra [`js/data.js`](js/data.js) e edite o array `LOCATIONS`. Cada item segue est
   address: "Endereço completo, Recife - PE",
   lat: -8.0631,
   lng: -34.8712,
-  zone: "recife-antigo", // "recife-antigo", "santo-antonio", "boa-vista" ou "torre" (filtro Localidade)
+  zone: "recife-antigo", // "recife-antigo", "santo-antonio" ou "boa-vista" (filtro Localidade)
   videoUrl: "videos/identificador-unico.mp4", // ou URL do YouTube/Google Drive
   synopsis: "Sinopse curta do filme.",
   releaseDate: "Data de lançamento (texto livre).",
@@ -121,10 +121,10 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
 | Gonzaga: De Pai pra Filho | 2012 | Marco Zero | Recife Antigo | ✔ |
+| Amarelo Manga | 2002 | Av. Marquês de Olinda e Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Parahyba Mulher Macho | 1983 | Praça da República | Santo Antônio | ✔ |
 | 1817: A Revolução Esquecida | 2017 | Palácio do Campo das Princesas | Santo Antônio | ✔ |
 | Prometo que um dia deixo essa cidade | 2019 | Rua Imperador Dom Pedro II | Santo Antônio | — |
 | Tatuagem | 2013 | Pátio de São Pedro | Santo Antônio | — |
-| As Três Marias | 2002 | Igreja de Nossa Senhora do Rosário | Torre | ✔ |
 
 Coordenadas obtidas via [Nominatim/OpenStreetMap](https://nominatim.openstreetmap.org/).
