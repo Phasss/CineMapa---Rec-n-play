@@ -11,7 +11,7 @@
  *    videoUrl: "videos/<nome>.mp4" — ele toca dentro do painel. Também
  *    aceita URL do YouTube (com &t=90s) ou link do Google Drive.
  *
- * zone aceita: "recife-antigo", "santo-antonio" ou "torre" — usado no
+ * zone aceita: "recife-antigo", "santo-antonio", "boa-vista" ou "torre" — usado no
  * filtro "Localidade" da lista.
  *
  * Dois locais com lat/lng EXATAMENTE iguais são agrupados automaticamente
@@ -44,17 +44,17 @@ const LOCATIONS = [
     id: "agente-secreto",
     title: "O Agente Secreto",
     year: 2025,
-    zone: "recife-antigo",
-    placeName: "Bairro do Recife (Marco Zero)",
-    address: "Bairro do Recife (Recife Antigo), Recife - PE",
-    lat: -8.0632,
-    lng: -34.8712,
+    zone: "boa-vista",
+    placeName: "Cinema São Luiz",
+    address: "Rua da Aurora, 175, Boa Vista, Recife - PE",
+    lat: -8.06211,
+    lng: -34.88181,
     videoUrl: "videos/agente-secreto.mp4",
     synopsis: "Em 1977, Marcelo retorna ao Recife em meio à ditadura militar e se vê envolvido em uma trama de perseguições e memórias. A cidade ocupa um papel central na construção da narrativa.",
     releaseDate: "6 de novembro de 2025",
     director: "Kleber Mendonça Filho",
     screenwriter: "Kleber Mendonça Filho",
-    notes: "Cena no Bairro do Recife — marcador posicionado no Marco Zero, ponto de referência do bairro."
+    notes: "Cinema de rua de 1952 na Rua da Aurora, às margens do Capibaribe, tombado como patrimônio histórico."
   },
   {
     id: "febre-do-rato",

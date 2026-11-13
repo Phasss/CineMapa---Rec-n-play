@@ -41,7 +41,7 @@ Abra [`js/data.js`](js/data.js) e edite o array `LOCATIONS`. Cada item segue est
   address: "Endereço completo, Recife - PE",
   lat: -8.0631,
   lng: -34.8712,
-  zone: "recife-antigo", // "recife-antigo", "santo-antonio" ou "torre" (filtro Localidade)
+  zone: "recife-antigo", // "recife-antigo", "santo-antonio", "boa-vista" ou "torre" (filtro Localidade)
   videoUrl: "videos/identificador-unico.mp4", // ou URL do YouTube/Google Drive
   synopsis: "Sinopse curta do filme.",
   releaseDate: "Data de lançamento (texto livre).",
@@ -117,7 +117,7 @@ Roteiro "Recife coisa de cinema" (saída do CAT Cenográfico, Praça do Arsenal)
 | Filme | Ano | Local | Bairro | Trecho |
 |---|---|---|---|---|
 | O Baile Perfumado | 1996 | Edifício Chanteclair | Recife Antigo | ✔ |
-| O Agente Secreto | 2025 | Marco Zero | Recife Antigo | ✔ |
+| O Agente Secreto | 2025 | Cinema São Luiz (Rua da Aurora) | Boa Vista | ✔ |
 | Febre do Rato | 2011 | Rua da Moeda | Recife Antigo | ✔ |
 | A Filha do Advogado | 1926 | Ponte Maurício de Nassau | Recife Antigo | ✔ |
 | Árido Movie | 2005 | Porto do Recife | Recife Antigo | ✔ |
